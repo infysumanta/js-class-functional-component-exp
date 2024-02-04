@@ -4,7 +4,13 @@ const paypalClient = new Paypal({
   secret: "secret",
   mode: "sandbox",
 });
-paypalClient.payment.createPayment({ amount: Math.floor(Math.random() * 101) });
+
+paypalClient.payment.v1.createPayment({
+  amount: Math.floor(Math.random() * 101),
+});
+paypalClient.payment.createPayment({
+  amount: Math.floor(Math.random() * 101),
+});
 paypalClient.payment.showPayment({ amount: Math.floor(Math.random() * 101) });
 paypalClient.order.createOrder({ amount: Math.floor(Math.random() * 101) });
 paypalClient.order.showOrder({ amount: Math.floor(Math.random() * 101) });

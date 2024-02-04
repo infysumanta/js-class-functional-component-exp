@@ -11,6 +11,14 @@ class Paypal {
 
     // Bind methods to the instance to make sure they have the correct 'this'
     this.payment = {
+      v1: {
+        /**
+         * @deprecated Use newFunction() instead.
+         * @param {string} param - The parameter for the deprecated function.
+         * @returns {string} - The result of the deprecated function.
+         */
+        createPayment: (data) => createPayment(data, this.getToken()),
+      },
       createPayment: (data) => createPayment(data, this.getToken()),
       showPayment: (data) => showPayment(data, this.getToken()),
     };
